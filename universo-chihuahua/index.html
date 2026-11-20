@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universo Chihuahua</title>
+
+    <style >
+       
+        body {
+            background-color: rgb(95, 136, 150);
+             font-family: Arial, sans-serif;
+             min-height: 100%;
+             box-sizing: border-box;
+        }
+
+  
+
+   main {
+    background-color: white;
+    width: 80%;
+    min-height: 100vh;
+    margin: auto;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 4px 4px 15px darkgray;
+    border: 2px solid purple;
+}
+        h1 {
+            color: purple;
+            text-align:center;
+            font-size: 36px;
+        }
+       h2 {
+    color: purple;
+    text-align: center;
+    font-size: 28px;
+} 
+
+        p {
+            color: blue;
+        text-align:center;
+        font-size: 18px;
+         line-height: 1.6;
+      }
+       img {
+        width: 50%;
+    display: block;
+    margin: auto;
+    border-radius: 15px;
+     box-shadow: 3px 3px 10px gray;
+}
+button {    
+background-color: red;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+    transition: 0.3s;    
+}
+button:hover {transition: 0.3s;
+    background-color: green;
+    transform: scale(1.1);
+}
+ 
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    } 
+    
+
+  .galeria img {
+    width: 100%;
+    max-width: 250px;
+    height: 220px;
+    object-fit: contain;
+    background-color: lavender;
+    display: block;
+    margin: auto;
+    border-radius: 20px;
+    box-shadow: 3px 3px 10px gray;
+}  
+.galeria img:hover {
+   transform: scale(1.1) rotate(2deg);
+    transition: 0.3s;
+    opacity: 0.7;
+} 
+nav{ 
+ background-color:purple;
+    text-align:center;
+    padding:15px;     
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+font-weight: bold;
+}
+
+    nav a:hover  { 
+  color: yellow;   }
+  #nosotros {
+    background-color: lavender;
+    padding: 20px;
+    margin-top: 30px;
+  border-radius: 15px; }
+  #contacto {
+    background-color: blueviolet;
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 15px;
+  }
+ footer {
+    background-color: purple;
+    padding: 15px;
+    margin-top: 20px;
+    text-align: center;
+border-radius: 10px;
+}
+footer p {
+    color: white;
+margin: 0;
+}
+ 
+ @media (max-width: 600px) {
+    main {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .galeria {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .galeria img {
+        width: 100%;
+        height: auto;
+        max-width: 100px;
+        object-fit: contain;
+    }
+}   
+ </style>
+</head>
+<body>
+    <nav> 
+    <a href="#inicio">Inicio</a>
+    <a href="#galeria">Galería</a>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#contacto">Contacto</a>
+</nav>
+    <main id="inicio">
+        <h1>Bienvenidos a Universo Chihuahua</h1>
+        <p>Un mundo lleno de perritos adorables.</p>
+        <img 
+src="https://images.unsplash.com/photo-1554692918-08fa0fdc9db3"
+alt="Un perrito"
+width="300">
+
+<button onclick="mostrarMensaje()">
+  Conoce más perritos
+  
+ </button>  
+<p id="mensaje"></p>
+<section>
+<h2>Meet our chihuahuas</h2>
+ <h2>Conoce a nuestros Chihuahuas</h2>
+<p>Discover our adorable little friends</p>
+ <p>¡Descubre a nuestros pequeños y adorables amigos!</p>   
+<div class="galeria" id="galeria">
+    <img class="foto1" src="https://images.unsplash.com/photo-1554692918-08fa0fdc9db3" alt="cute chihuahua">
+    <img class="foto2" src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee" alt="A beautiful Chihuahua">
+    <img class="foto3" src="https://images.unsplash.com/photo-1517849845537-4d257902454a" alt="A cute little dog">
+</div>
+</section>
+<section id="nosotros">
+<h2>Sobre Nosotros</h2> 
+<p>En universo chihuahua celebramos el amor por estos pequeños y adorables perros.</p>
+</section> 
+ <section id="contacto">
+    <h2>Contacto</h2>
+    <p>Gracias por visitar Universo Chihuahua. ¡Nos encanta compartir nuestro amor por los perritos!</p>
+</section>
+
+</main>
+<footer>
+    <p>&copy; 2026 Universo Chihuahua. Todos los derechos reservados.</p>
+
+</footer>
+    
+       
+       
+    
+<script>
+
+      let nombre="perritos";
+    
+      function mostrarMensaje() {
+        document.getElementById("mensaje").textContent =
+            "¡Gracias por visitar Universo "+nombre+"! 🐶";
+        
+    }
+</script>
+</body>
+</html>
