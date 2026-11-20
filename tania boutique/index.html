@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tania Boutique</title>
+    <style>
+     body {
+    background-color: #E5EAE2;
+    font-family: Arial, sans-serif;
+    color: #35566D;
+    text-align: center;
+}
+
+    img{
+     width: 90%;
+    max-width: 420px;
+    height: auto;
+    display: block;
+    margin: 20px auto;   
+    }
+    .portada {
+     width: 100%;
+    max-width: none;
+    height: 740px;
+    object-fit: cover;
+    object-position: center 20%;
+    }
+
+    video {
+    width: 90%;
+    max-width: 500px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+}
+.producto {
+    background-color: white;
+    width: 250px;
+    padding: 15px;
+    margin: 20px auto;
+    border-radius: 12px;
+    box-shadow: 2px 2px 10px gray;
+    overflow: hidden;
+}
+.producto img{
+ width: 250px;
+ max-width: none;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px; 
+    transition: transform 0.4s;  
+}
+.producto img:hover {
+    transform: scale(1.05);
+}
+.producto .galeria img {
+    width: 100%;
+    max-width: 100%;
+    height: 180px;
+    object-fit: cover;
+    margin: 0;
+    border-radius: 10px;
+    display: block;
+}
+button {
+    background-color: #35566D;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #D4A373;
+    transform: scale(1.08);
+}
+.visor {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+.visor img {
+    width: 80%;
+    max-width: 700px;
+    max-height: 85vh;
+    object-fit: contain;
+}
+
+.visor span {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 45px;
+    cursor: pointer;
+}
+.galeria {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    max-width: 700px;
+    margin: 20px auto;
+}
+.carrito-pequeno {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: white;
+    color: #35566D;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    font-size: 20px;
+}
+.productos { 
+display: grid;
+grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 10px;
+}
+@media (max-width: 600px) {
+    .productos {
+        grid-template-columns: 1fr;
+    }
+
+    .producto {
+        width: 85%;
+        max-width: 320px;
+    }
+}
+.vestido {
+    background-color: transparent;
+    box-shadow: none;
+    width: 100%;
+    padding: 0;
+}
+
+
+.sin-cuadro {
+    background-color: transparent;
+    box-shadow: none;
+    width: 100%;
+    padding: 0;
+}
+#carrito {
+    background-color: white;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 12px gray;
+}
+
+#carrito h2 {
+    color: #35566D;
+}
+
+#carrito p {
+    padding: 10px;
+    border-bottom: 1px solid #E5EAE2;
+}
+.btn-quitar {
+    background-color: #D4A373;
+    color: white;
+    padding: 6px 12px;
+    font-size: 12px;
+    border-radius: 6px;
+}
+
+.btn-quitar:hover {
+    background-color:#B87950;
+}
+    </style>
+</head>
+<body>
+<h1 id="inicio">Bienvenidos a Tania Boutique</h1>
+
+<nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#coleccion">Colección</a>
+    <a href="#contacto">Contacto</a>
+    <a href="#nosotros">Nosotros</a>
+ <a href="carrito.html">🛒 Carrito (<span id="contador">0</span>)</a>   
+</nav>
+<h2 id="coleccion">Elegancia, moda y estilo</h2>
+
+
+<img src="imagenes/pexels-arina-krasnikova-5418895.jpg" alt="Ropa elegante para mujer"class="portada">
+<h2>Pantalones de mezclilla</h2>
+
+<div class="producto sin-cuadro">
+    <h3>Jeans para mujer</h3>
+
+    <div class="galeria">
+
+        <img src="https://images.pexels.com/photos/17503375/pexels-photo-17503375.jpeg?cs=srgb&dl=pexels-dmitriy-steinke-559643503-17503375.jpg&fm=jpg&_gl=1*6rse6p*_ga*MjEyMTE0MDU0Mi4xNzkzOTg1Mjkw*_ga_8JE65Q40S6*czE3OTQxMTAxMDMkbzUkZzEkdDE3OTQxMTE4MTIkajU5JGwwJGgw" alt="Pantalón de frente">
+
+        <img src="https://images.pexels.com/photos/17630744/pexels-photo-17630744.jpeg?cs=srgb&dl=pexels-dmitriy-steinke-559643503-17630744.jpg&fm=jpg&_gl=1*ta4wa6*_ga*MjEyMTE0MDU0Mi4xNzkzOTg1Mjkw*_ga_8JE65Q40S6*czE3OTQxMTAxMDMkbzUkZzEkdDE3OTQxMTE2NzkkajU5JGwwJGgw" alt="Pantalón de espalda">
+
+        <img src="https://images.pexels.com/photos/34960532/pexels-photo-34960532.jpeg?cs=srgb&dl=pexels-moralestorres98-34960532.jpg&fm=jpg&_gl=1*6qrcxh*_ga*MjEyMTE0MDU0Mi4xNzkzOTg1Mjkw*_ga_8JE65Q40S6*czE3OTQxMTAxMDMkbzUkZzEkdDE3OTQxMTM2MzckajU5JGwwJGgw" alt="Pantalón de lado">
+        <img src="https://images.pexels.com/photos/7794357/pexels-photo-7794357.jpeg?cs=srgb&dl=pexels-gabby-k-7794357.jpg&fm=jpg&_gl=1*bvm7dt*_ga*MjEyMTE0MDU0Mi4xNzkzOTg1Mjkw*_ga_8JE65Q40S6*czE3OTQxMTAxMDMkbzUkZzEkdDE3OTQxMTM4MTIkajI2JGwwJGgw" alt="Detalles del pantalón">
+<button class="carrito-pequeno" onclick="agregarAlCarrito('Jeans para mujer', 599)">
+    🛒
+</button>
+    </div>
+
+    <p>Pantalón de mezclilla para mujer.</p>
+    <p>$599 MXN</p>
+<button onclick="agregarAlCarrito('Jeans para mujer', 599)">
+    Comprar
+</button>
+</div>
+
+<h3>Descubre nuestra colección</h3>
+<div class="productos">
+
+ <div class="producto vestido">
+    <h3>Vestido elegante</h3>
+
+    <div class="galeria">
+
+        <img src="https://images.pexels.com/photos/33034129/pexels-photo-33034129.jpeg?cs=srgb&dl=pexels-vika-glitter-392079-33034129.jpg&fm=jpg&_gl=1*1jvneju*_ga*MjEyMTE0MDU0Mi4xNzkzOTg1Mjkw*_ga_8JE65Q40S6*czE3OTQwOTQzNzckbzQkZzEkdDE3OTQwOTcwNDckajM4JGwwJGgw" alt="Vestido de frente">
+
+        <img src="https://images.pexels.com/photos/9892885/pexels-photo-9892885.jpeg?cs=srgb&dl=pexels-cottonbro-9892885.jpg&fm=jpg&_gl=1*1e46zhi*_ga*MjEyMTE0MDU0Mi4xNzkzOTg1Mjkw*_ga_8JE65Q40S6*czE3OTQwOTQzNzckbzQkZzEkdDE3OTQwOTcyNzIkajUyJGwwJGgw" alt="Vestido de espalda">
+
+        <img src="https://images.pexels.com/photos/2830076/pexels-photo-2830076.jpeg" alt="Vestido de lado">
+
+     <img src="https://images.pexels.com/photos/4862913/pexels-photo-4862913.jpeg" alt="Detalles del vestido">
+        
+    </div>    
+
+    <p>Un vestido elegante para ocasiones especiales.</p>
+
+    <p>$599 MXN</p>
+<button onclick="agregarAlCarrito('Vestido elegante', 599)">
+    Comprar
+</button>
+    
+
+</div>   
+
+
+  
+<div class="producto sin-cuadro">
+    <img src="https://images.pexels.com/photos/19109132/pexels-photo-19109132.jpeg" alt="Ropa elegante">
+    <h3>blazer elegante</h3>
+    <p>Un blazer elegante para ocasiones especiales.</p>
+    <p>$699 MXN</p>
+  <button onclick="agregarAlCarrito('Blazer elegante', 699)">
+    Comprar
+</button> 
+</div>
+<div class="producto sin-cuadro">
+    <h3>Bolsa elegante para dama</h3>
+   <p>Una bolsa elegante para complementar tu estilo.</p>
+   <div class="galeria">
+    <img src="https://images.pexels.com/photos/22434770/pexels-photo-22434770.jpeg?cs=srgb&dl=pexels-dhanno-22434770.jpg&fm=jpg&_gl=1*7xrkfr*_ga*MjEyMTE0MDU0Mi4xNzkzOTg1Mjkw*_ga_8JE65Q40S6*czE3OTQxMTAxMDMkbzUkZzEkdDE3OTQxMTU5NTAkajEzJGwwJGgw" alt="Bolsa de frente">
+
+    <img src="https://images.pexels.com/photos/23223848/pexels-photo-23223848.jpeg?cs=srgb&dl=pexels-dhanno-23223848.jpg&fm=jpg&_gl=1*1ed79sc*_ga*MjEyMTE0MDU0Mi4xNzkzOTg1Mjkw*_ga_8JE65Q40S6*czE3OTQxMTAxMDMkbzUkZzEkdDE3OTQxMTU5ODMkajQwJGwwJGgw" alt="Bolsa de espalda">
+
+    <img src="https://images.pexels.com/photos/22434768/pexels-photo-22434768.jpeg?cs=srgb&dl=pexels-dhanno-22434768.jpg&fm=jpg&_gl=1*3y4960*_ga*MjEyMTE0MDU0Mi4xNzkzOTg1Mjkw*_ga_8JE65Q40S6*czE3OTQxMTAxMDMkbzUkZzEkdDE3OTQxMTYwMjkkajU5JGwwJGgw" alt="Bolsa de lado">
+
+    <img src="https://images.pexels.com/photos/22434774/pexels-photo-22434774.jpeg?cs=srgb&dl=pexels-dhanno-22434774.jpg&fm=jpg&_gl=1*11mu9am*_ga*MjEyMTE0MDU0Mi4xNzkzOTg1Mjkw*_ga_8JE65Q40S6*czE3OTQxMTAxMDMkbzUkZzEkdDE3OTQxMTYwNzEkajE3JGwwJGgw" alt="Detalles de la bolsa">
+ 
+    </div> 
+   <p>$799 MXN</p>
+  <button onclick="agregarAlCarrito('Bolsa elegante', 799)">
+    Comprar
+</button>
+     
+</div>
+
+<!-- PRODUCTO: BLUSAS -->
+<div class="producto sin-cuadro">
+    <h3>Blusas elegantes</h3>
+
+    <div class="galeria">
+        <img src="https://images.unsplash.com/photo-1564257577-3c2b1c5b1a9d?w=600" alt="Blusa de frente">
+
+        <img src="https://images.unsplash.com/photo-1551163943-3f6a855d1153?w=600" alt="Blusa elegante">
+
+        <img src="https://images.unsplash.com/photo-1598554747436-c9293d6a588f?w=600" alt="Blusa de mujer">
+
+        <img src="https://images.unsplash.com/photo-1566206091558-7f218b696731?w=600" alt="Detalle de blusa">
+    </div>
+
+    <p>Blusas modernas para lucir elegante.</p>
+    <p>$399 MXN</p>
+  <button onclick="agregarAlCarrito('Blusas elegantes', 399)">
+    Comprar
+</button>  
+</div>
+
+<!-- PRODUCTO: ZAPATOS -->
+<div class="producto sin-cuadro">
+    <h3>Zapatos elegantes</h3>
+
+    <div class="galeria">
+        <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600" alt="Zapatos de mujer">
+
+        <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600&fit=crop" alt="Zapatos elegantes">
+
+        <img src="https://images.unsplash.com/photo-1515347619252-60a4bf4fff4f?w=600" alt="Calzado femenino">
+
+        <img src="https://images.unsplash.com/photo-1535043934128-cf0b28d52f95?w=600" alt="Detalle de zapatos">
+    </div>
+
+    <p>Calzado elegante para complementar tu estilo.</p>
+    <p>$699 MXN</p>
+   <button onclick="agregarAlCarrito('Zapatos elegantes', 699)">
+    Comprar
+</button> 
+</div>
+
+</div>
+
+<video controls >
+    <source src="https://videos.pexels.com/video-files/8374211/8374211-hd_1080_1920_25fps.mp4" type="video/mp4">
+    Tu navegador no puede reproducir este video.
+</video>
+
+<p>
+Descubre nuestra coleccion de moda femenina,Encuentra prendas elegantes que resaltan tu belleza,personalidad y estilo.
+</p>
+<section id="nosotros">
+    <h2>Sobre Tania Boutique</h2>
+    <p>
+        En Tania Boutique creemos que cada mujer merece
+        sentirse hermosa, segura y elegante.
+    </p>
+</section>
+<section id="contacto">
+    <h2>Contáctanos</h2>
+    <p>
+        Gracias por visitar Tania Boutique.
+        Estamos felices de ayudarte a encontrar tu estilo.
+    </p>
+</section>
+
+
+
+<div id="visor" class="visor" onclick="cerrarFoto()">
+    <span>&times;</span>
+    <img id="fotoGrande" src="" alt="Fotografía ampliada">
+</div>
+<script>
+    const fotos = document.querySelectorAll(".galeria img");
+
+    fotos.forEach(function(foto) {
+        foto.onclick = function() {
+            document.getElementById("fotoGrande").src = foto.src;
+            document.getElementById("visor").style.display = "flex";
+        };
+    });
+function cerrarFoto() {
+    document.getElementById("visor").style.display = "none";
+}
+
+function comprar() {
+    alert("¡Gracias por visitar Tania Boutique!");
+}
+ let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+function agregarAlCarrito(nombre, precio) {
+    let productoEncontrado = carrito.find(function(producto) {
+        return producto.nombre === nombre;
+    });
+
+    if (productoEncontrado) {
+        productoEncontrado.cantidad++;
+    } else {
+        carrito.push({
+            nombre: nombre,
+            precio: precio,
+            cantidad: 1
+        });
+    }
+
+ localStorage.setItem("carrito", JSON.stringify(carrito));
+
+window.location.href = "carrito.html";
+}   
+  
+</script>
+</body>
+</html>

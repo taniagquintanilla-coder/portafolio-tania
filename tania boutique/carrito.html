@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi carrito - Tania Boutique</title>
+ <style>
+    body {
+        background-color: #E5EAE2;
+        font-family: Arial, sans-serif;
+        color: #35566D;
+        text-align: center;
+        margin: 0;
+    }
+
+    h1 {
+        background-color: white;
+        padding: 25px;
+        margin: 0;
+        box-shadow: 2px 2px 10px gray;
+    }
+</style>   
+</head>
+
+<body>
+
+    <h1>🛒 Mi carrito de compras</h1>
+
+    <div id="lista-carrito"></div>
+
+<h2>Total: $<span id="total">0</span> MXN</h2>
+
+<button onclick="vaciarCarrito()">Vaciar carrito</button>
+<a href="index tania boutique.html">← Seguir comprando</a>
+<script>
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+function actualizarCarrito() {
+    const lista = document.getElementById("lista-carrito");
+    const total = document.getElementById("total");
+
+    lista.innerHTML = "";
+    let suma = 0;
+
+    carrito.forEach(function(producto, indice) {
+        suma += producto.precio * producto.cantidad;
+
+        lista.innerHTML += `
+            <p>
+                ${producto.nombre} × ${producto.cantidad}<br>
+                Subtotal: $${producto.precio * producto.cantidad} MXN
+                <button onclick="quitarDelCarrito(${indice})">
+                    Quitar
+                </button>
+            </p>
+        `;
+    });
+
+    if (carrito.length === 0) {
+        lista.innerHTML = "<p>Tu carrito está vacío.</p>";
+    }
+
+    total.textContent = suma;
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+}
+
+function quitarDelCarrito(indice) {
+    carrito.splice(indice, 1);
+    actualizarCarrito();
+}
+
+function vaciarCarrito() {
+    carrito = [];
+    actualizarCarrito();
+}
+
+actualizarCarrito();
+</script>
+</body>
+</html>
